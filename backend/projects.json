@@ -21,6 +21,15 @@
       "React Vite",
       "Laravel Sanctum",
       "Tailwind CSS"
+    ],
+    "imageUrl": "https://i.pinimg.com/736x/b5/9e/fb/b59efbe7b956505737ceec947f5c7683.jpg",
+    "liveDemoUrl": "https://github.com/codpangestu/FE-SkyBooking.git",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Laravel."
     ]
   }
 ]
