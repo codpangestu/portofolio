@@ -111,8 +111,8 @@ function Admin() {
                 date: item.duration || item.date || '',
                 description: item.description || '',
                 image: '',
-                tags: '',
-                link: ''
+                tags: item.technologies ? item.technologies.join(', ') : '',
+                link: item.link || ''
             })
         }
         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -164,7 +164,9 @@ function Admin() {
                 role: formData.title,
                 company: formData.company,
                 duration: formData.date,
-                description: formData.description
+                description: formData.description,
+                link: formData.link,
+                technologies: tagsArray
             }
         }
 
