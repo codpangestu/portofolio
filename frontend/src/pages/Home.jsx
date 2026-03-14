@@ -43,11 +43,6 @@ function Home() {
     // Mouse move effect for the radial background glow
     useEffect(() => {
         const handleMouseMove = (e) => {
-            // Create a smooth glowing effect centered at cursor, transitioning to transparent
-            const background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(29, 78, 216, 0.15), transparent 80%)`
-            document.documentElement.style.background = background
-            // Because root background might overwrite, we apply to a fixed div or the body directly.
-            // Easiest is to target a dedicated fixed background div.
             setMousePos({ x: e.clientX, y: e.clientY })
         }
 
@@ -192,16 +187,16 @@ function Home() {
                         ) : experiences.length === 0 ? (
                             <div style={{ color: 'var(--text-secondary)' }}>No experience available.</div>
                         ) : (
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                            <div className="group-list">
                                 {experiences.map((exp, idx) => (
-                                    <a href={exp.link || undefined} target={exp.link ? "_blank" : undefined} rel={exp.link ? "noreferrer" : undefined} key={exp.id} className={`glass-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ textDecoration: 'none', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: exp.link ? 'pointer' : 'default' }} onClick={(e) => { if (!exp.link) e.preventDefault() }}>
+                                    <a href={exp.link || undefined} target={exp.link ? "_blank" : undefined} rel={exp.link ? "noreferrer" : undefined} key={exp.id || exp._id} className={`list-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ cursor: exp.link ? 'pointer' : 'default' }} onClick={(e) => { if (!exp.link) e.preventDefault() }}>
                                         <div style={{ flexShrink: 0, width: '120px', paddingTop: '0.2rem' }}>
                                             <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                                 {exp.duration || exp.date}
                                             </span>
                                         </div>
                                         <div style={{ flex: 1 }}>
-                                            <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
+                                            <h4 className="list-card-title" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem', fontSize: '1.1rem' }}>
                                                 {exp.role || exp.title} · {exp.company} {exp.link ? <ExternalLink size={14} style={{ opacity: 0.5 }} /> : null}
                                             </h4>
                                             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.5 }}>
@@ -209,7 +204,7 @@ function Home() {
                                             </p>
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                                                 {exp.technologies?.map(tech => (
-                                                    <span key={tech} style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: 'rgba(94, 234, 212, 0.1)', color: 'var(--accent-color)', borderRadius: '999px' }}>
+                                                    <span key={tech} style={{ fontSize: '0.75rem', padding: '0.3rem 0.8rem', background: 'rgba(94, 234, 212, 0.1)', color: 'var(--accent-color)', borderRadius: '999px', fontWeight: 500 }}>
                                                         {tech}
                                                     </span>
                                                 ))}
@@ -232,14 +227,14 @@ function Home() {
                         ) : projects.length === 0 ? (
                             <div style={{ color: 'var(--text-secondary)' }}>No projects available.</div>
                         ) : (
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                            <div className="group-list">
                                 {projects.map((project, idx) => (
-                                    <a href={project.link || undefined} target={project.link ? "_blank" : undefined} rel={project.link ? "noreferrer" : undefined} key={project.id} className={`glass-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ textDecoration: 'none', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: project.link ? 'pointer' : 'default' }} onClick={(e) => { if (!project.link) e.preventDefault() }}>
-                                        <div style={{ flexShrink: 0, width: '120px' }}>
+                                    <a href={project.link || project.liveDemoUrl || project.githubUrl || undefined} target={project.link || project.liveDemoUrl || project.githubUrl ? "_blank" : undefined} rel={project.link || project.liveDemoUrl || project.githubUrl ? "noreferrer" : undefined} key={project.id || project._id} className={`list-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ cursor: project.link || project.liveDemoUrl || project.githubUrl ? 'pointer' : 'default' }} onClick={(e) => { if (!(project.link || project.liveDemoUrl || project.githubUrl)) e.preventDefault() }}>
+                                        <div style={{ flexShrink: 0, width: '120px', paddingTop: '0.2rem' }}>
                                             <img src={project.imageUrl || 'https://via.placeholder.com/400x300'} alt={project.title} style={{ width: '100%', borderRadius: '4px', objectFit: 'cover', height: '80px', border: '2px solid rgba(255,255,255,0.05)' }} />
                                         </div>
                                         <div style={{ flex: 1 }}>
-                                            <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
+                                            <h4 className="list-card-title" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
                                                 {project.title} {project.link || project.liveDemoUrl || project.githubUrl ? <ExternalLink size={14} style={{ opacity: 0.5 }} /> : null}
                                             </h4>
                                             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.5 }}>
@@ -247,7 +242,7 @@ function Home() {
                                             </p>
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                                                 {project.technologies && project.technologies.map(tag => (
-                                                    <span key={tag} style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: 'rgba(94, 234, 212, 0.1)', color: 'var(--accent-color)', borderRadius: '999px' }}>
+                                                    <span key={tag} style={{ fontSize: '0.75rem', padding: '0.3rem 0.8rem', background: 'rgba(94, 234, 212, 0.1)', color: 'var(--accent-color)', borderRadius: '999px', fontWeight: 500 }}>
                                                         {tag}
                                                     </span>
                                                 ))}
