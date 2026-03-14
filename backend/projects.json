@@ -1,50 +1,26 @@
 [
   {
-    "id": "3",
-    "title": "AI Content Platform",
-    "description": "A SaaS platform leveraging AI to generate high-quality marketing copy and dynamic blog posts.",
-    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-    "tags": [
-      "React",
-      "OpenAI API",
-      "Node.js",
-      "Prisma"
-    ],
-    "link": "#"
-  },
-  {
-    "id": "1772037271541",
-    "title": "New AI Project",
-    "description": "This is a brand new project added from the admin dashboard.",
-    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-    "tags": [
-      "AI",
-      "React",
-      "Next.js"
-    ],
-    "link": "https://example.com"
-  },
-  {
-    "id": "1772041074515",
-    "title": "rebuilt word exxss",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  ",
-    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-    "link": "https://example.com",
-    "tags": [
-      "AI",
-      "React",
-      "Next.js"
-    ]
-  },
-  {
-    "id": "1773503689671",
-    "title": "WebbApp Mini Wallet",
+    "id": "1773504787887",
+    "title": "Mini Wallet",
     "description": "is a web-based application designed to simulate a digital payment ecosystem in a simple, secure, and responsive way. The app's primary focus is on providing a seamless user experience for managing balances and conducting daily financial transactions without the complexities of conventional banking.",
-    "image": "https://drive.google.com/file/d/1IVfP3A6Mwll-Mg8f7BCKJUXamXWrcOUg/view?usp=sharing",
+    "image": "https://i.pinimg.com/736x/d2/bd/49/d2bd4942fbb903b6929ee58f32b7f31d.jpg",
     "link": "https://github.com/codpangestu/FE-Frontwallet.git",
     "tags": [
       "React Vite",
-      "Laravel Sanctum"
+      "Laravel Sanctum",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "id": "1773505086651",
+    "title": "SkyBooking",
+    "description": "SkyBooking is a web-based airline reservation platform designed to simplify the process of searching and booking flights. The project combines the high performance of React with the design flexibility of Tailwind CSS, creating an intuitive and responsive interface across multiple devices.",
+    "image": "https://i.pinimg.com/736x/b5/9e/fb/b59efbe7b956505737ceec947f5c7683.jpg",
+    "link": "https://github.com/codpangestu/FE-SkyBooking.git",
+    "tags": [
+      "React Vite",
+      "Laravel Sanctum",
+      "Tailwind CSS"
     ]
   }
 ]

@@ -154,8 +154,8 @@ function Home() {
                     </div>
 
                     <div className="social-icons animate-fade-in delay-300">
-                        <a href="www.linkedin.com/in/akbar-pangestu-6b362933b" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={24} /></a>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={24} /></a>
+                        <a href="https://github.com/codpangestu" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={24} /></a>
+                        <a href="https://www.linkedin.com/in/akbar-pangestu-6b362933b" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={24} /></a>
                         <a href="mailto:hello@example.com" aria-label="Email"><Mail size={24} /></a>
                     </div>
                 </header>
