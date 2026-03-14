@@ -154,7 +154,7 @@ function Home() {
                     </div>
 
                     <div className="social-icons animate-fade-in delay-300">
-                        <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={24} /></a>
+                        <a href="www.linkedin.com/in/akbar-pangestu-6b362933b" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={24} /></a>
                         <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={24} /></a>
                         <a href="mailto:hello@example.com" aria-label="Email"><Mail size={24} /></a>
                     </div>
@@ -197,12 +197,12 @@ function Home() {
                                     <a href={exp.link || undefined} target={exp.link ? "_blank" : undefined} rel={exp.link ? "noreferrer" : undefined} key={exp.id} className={`glass-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ textDecoration: 'none', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: exp.link ? 'pointer' : 'default' }} onClick={(e) => { if (!exp.link) e.preventDefault() }}>
                                         <div style={{ flexShrink: 0, width: '120px', paddingTop: '0.2rem' }}>
                                             <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                                                {exp.date}
+                                                {exp.duration || exp.date}
                                             </span>
                                         </div>
                                         <div style={{ flex: 1 }}>
                                             <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                                {exp.title} · {exp.company} {exp.link ? <ExternalLink size={14} style={{ opacity: 0.5 }} /> : null}
+                                                {exp.role || exp.title} · {exp.company} {exp.link ? <ExternalLink size={14} style={{ opacity: 0.5 }} /> : null}
                                             </h4>
                                             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.5 }}>
                                                 {exp.description}
@@ -236,17 +236,17 @@ function Home() {
                                 {projects.map((project, idx) => (
                                     <a href={project.link || undefined} target={project.link ? "_blank" : undefined} rel={project.link ? "noreferrer" : undefined} key={project.id} className={`glass-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ textDecoration: 'none', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', cursor: project.link ? 'pointer' : 'default' }} onClick={(e) => { if (!project.link) e.preventDefault() }}>
                                         <div style={{ flexShrink: 0, width: '120px' }}>
-                                            <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '4px', objectFit: 'cover', height: '80px', border: '2px solid rgba(255,255,255,0.05)' }} />
+                                            <img src={project.imageUrl || 'https://via.placeholder.com/400x300'} alt={project.title} style={{ width: '100%', borderRadius: '4px', objectFit: 'cover', height: '80px', border: '2px solid rgba(255,255,255,0.05)' }} />
                                         </div>
                                         <div style={{ flex: 1 }}>
                                             <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '1.1rem', color: 'var(--text-primary)' }}>
-                                                {project.title} {project.link ? <ExternalLink size={14} style={{ opacity: 0.5 }} /> : null}
+                                                {project.title} {project.link || project.liveDemoUrl || project.githubUrl ? <ExternalLink size={14} style={{ opacity: 0.5 }} /> : null}
                                             </h4>
                                             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.5 }}>
                                                 {project.description}
                                             </p>
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                                {project.tags.map(tag => (
+                                                {project.technologies && project.technologies.map(tag => (
                                                     <span key={tag} style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: 'rgba(94, 234, 212, 0.1)', color: 'var(--accent-color)', borderRadius: '999px' }}>
                                                         {tag}
                                                     </span>

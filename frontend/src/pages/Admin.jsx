@@ -100,19 +100,19 @@ function Admin() {
                 title: item.title,
                 company: '', date: '',
                 description: item.description,
-                image: item.image,
-                tags: item.tags ? item.tags.join(', ') : '',
-                link: item.link
+                image: item.imageUrl || '',
+                tags: item.technologies ? item.technologies.join(', ') : '',
+                link: item.liveDemoUrl || ''
             })
         } else {
             setFormData({
-                title: item.title,
+                title: item.role || item.title || '',
                 company: item.company || '',
-                date: item.date || '',
-                description: item.description,
+                date: item.duration || item.date || '',
+                description: item.description || '',
                 image: '',
-                tags: item.technologies ? item.technologies.join(', ') : '',
-                link: item.link || ''
+                tags: '',
+                link: ''
             })
         }
         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -155,18 +155,16 @@ function Admin() {
             processedData = {
                 title: formData.title,
                 description: formData.description,
-                image: formData.image,
-                link: formData.link,
-                tags: tagsArray
+                imageUrl: formData.image,
+                liveDemoUrl: formData.link,
+                technologies: tagsArray
             }
         } else {
             processedData = {
-                title: formData.title,
+                role: formData.title,
                 company: formData.company,
-                date: formData.date,
-                description: formData.description,
-                link: formData.link,
-                technologies: tagsArray
+                duration: formData.date,
+                description: formData.description
             }
         }
 
@@ -361,15 +359,15 @@ function Admin() {
 
                                 {/* Render Projects */}
                                 {activeTab === 'projects' && projects.map(project => (
-                                    <div key={project.id} style={{
+                                    <div key={project._id || project.id} style={{
                                         display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1rem',
                                         background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: '12px'
                                     }}>
-                                        <img src={project.image} alt={project.title} style={{ width: '80px', height: '60px', objectFit: 'cover', borderRadius: '6px' }} />
+                                        <img src={project.imageUrl || 'https://via.placeholder.com/80x60?text=No+Image'} alt={project.title} style={{ width: '80px', height: '60px', objectFit: 'cover', borderRadius: '6px' }} />
                                         <div style={{ flex: 1 }}>
                                             <h4 style={{ margin: 0, fontSize: '1.1rem' }}>{project.title}</h4>
                                             <p style={{ margin: '0.2rem 0 0 0', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                                                {project.tags.join(', ')}
+                                                {project.technologies ? project.technologies.join(', ') : ''}
                                             </p>
                                         </div>
                                         <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -392,11 +390,11 @@ function Admin() {
                                         <div style={{ flex: 1 }}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
                                                 <div>
-                                                    <h4 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-primary)' }}>{exp.title}</h4>
+                                                    <h4 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-primary)' }}>{exp.role || exp.title}</h4>
                                                     <h5 style={{ margin: '0.2rem 0', fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 500 }}>{exp.company}</h5>
                                                 </div>
                                                 <span style={{ fontSize: '0.85rem', color: 'var(--accent-color)', background: 'rgba(94, 234, 212, 0.1)', padding: '0.2rem 0.8rem', borderRadius: '999px' }}>
-                                                    {exp.date}
+                                                    {exp.duration || exp.date}
                                                 </span>
                                             </div>
                                             <p style={{ margin: '0.5rem 0 1rem 0', fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
