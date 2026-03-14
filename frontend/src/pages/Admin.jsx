@@ -93,7 +93,7 @@ function Admin() {
 
     const handleEdit = (item) => {
         setIsEditing(true)
-        setCurrentId(item.id)
+        setCurrentId(item._id || item.id)
 
         if (activeTab === 'projects') {
             setFormData({
@@ -374,7 +374,7 @@ function Admin() {
                                             <button onClick={() => handleEdit(project)} className="btn btn-outline" style={{ padding: '0.5rem' }} title="Edit">
                                                 <Edit size={16} />
                                             </button>
-                                            <button onClick={() => handleDelete(project.id)} className="btn btn-outline" style={{ padding: '0.5rem', color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.3)' }} title="Delete">
+                                            <button onClick={() => handleDelete(project._id || project.id)} className="btn btn-outline" style={{ padding: '0.5rem', color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.3)' }} title="Delete">
                                                 <Trash2 size={16} />
                                             </button>
                                         </div>
@@ -383,7 +383,7 @@ function Admin() {
 
                                 {/* Render Experiences */}
                                 {activeTab === 'experiences' && experiences.map(exp => (
-                                    <div key={exp.id} style={{
+                                    <div key={exp._id || exp.id} style={{
                                         display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.5rem',
                                         background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: '12px'
                                     }}>
@@ -409,7 +409,7 @@ function Admin() {
                                             <button onClick={() => handleEdit(exp)} className="btn btn-outline" style={{ padding: '0.5rem' }} title="Edit">
                                                 <Edit size={16} />
                                             </button>
-                                            <button onClick={() => handleDelete(exp.id)} className="btn btn-outline" style={{ padding: '0.5rem', color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.3)' }} title="Delete">
+                                            <button onClick={() => handleDelete(exp._id || exp.id)} className="btn btn-outline" style={{ padding: '0.5rem', color: '#ef4444', borderColor: 'rgba(239, 68, 68, 0.3)' }} title="Delete">
                                                 <Trash2 size={16} />
                                             </button>
                                         </div>
