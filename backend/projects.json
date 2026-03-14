@@ -1,0 +1,39 @@
+[
+  {
+    "id": "3",
+    "title": "AI Content Platform",
+    "description": "A SaaS platform leveraging AI to generate high-quality marketing copy and dynamic blog posts.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+    "tags": [
+      "React",
+      "OpenAI API",
+      "Node.js",
+      "Prisma"
+    ],
+    "link": "#"
+  },
+  {
+    "id": "1772037271541",
+    "title": "New AI Project",
+    "description": "This is a brand new project added from the admin dashboard.",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    "tags": [
+      "AI",
+      "React",
+      "Next.js"
+    ],
+    "link": "https://example.com"
+  },
+  {
+    "id": "1772041074515",
+    "title": "rebuilt word exxss",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard  ",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    "link": "https://example.com",
+    "tags": [
+      "AI",
+      "React",
+      "Next.js"
+    ]
+  }
+]

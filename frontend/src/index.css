@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700&display=swap');
+
+:root {
+  /* Core Colors imitating reference */
+  --bg-color: #0f172a;
+  /* Slate 900 */
+  --text-primary: #e2e8f0;
+  /* Slate 200 */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --accent-color: #5eead4;
+  /* Teal 300 */
+  --accent-hover: #2dd4bf;
+  /* Teal 400 */
+
+  /* Glow Effect */
+  --glow-color: rgba(29, 78, 216, 0.15);
+  /* Soft blue radial */
+
+  /* Glassmorphism subtle */
+  --glass-bg: rgba(30, 41, 59, 0.5);
+  /* Slate 800 */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Transitions */
+  --transition-smooth: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mouse Glow Effect Background */
+.glow-background {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  transition: background 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Layout Elements */
+.page-container {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 0 6rem;
+  }
+}
+
+/* Header / Left Side (Desktop) */
+.header-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+
+@media (min-width: 1024px) {
+  .header-hero {
+    position: sticky;
+    top: 0;
+    width: 48%;
+    /* Roughly half */
+    max-height: 100vh;
+    padding: 6rem 0;
+  }
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.hero-brief {
+  max-width: 320px;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Navigation Menu */
+.sidebar-nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .sidebar-nav {
+    display: block;
+    margin-top: 3rem;
+  }
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  width: max-content;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.nav-indicator {
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background-color: var(--text-secondary);
+  margin-right: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--text-primary);
+}
+
+.nav-item:hover .nav-indicator,
+.nav-item.active .nav-indicator {
+  width: 4rem;
+  background-color: var(--text-primary);
+}
+
+/* Main Content / Right Side (Desktop) */
+.main-content {
+  padding: 3rem 0;
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    width: 52%;
+    /* Slightly larger right pane */
+    padding: 6rem 0;
+  }
+}
+
+.section-content {
+  margin-bottom: 6rem;
+  scroll-margin-top: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-content {
+    margin-bottom: 8rem;
+  }
+}
+
+/* Glass Card / Project Card Refinements */
+.glass-card {
+  background: transparent;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.glass-card:hover {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary {
+  color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.btn-outline {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 4px;
+}
+
+.btn-outline:hover {
+  background: rgba(94, 234, 212, 0.1);
+}
+
+/* Modern Form elements */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.input-field {
+  width: 100%;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Icons */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: auto;
+  /* Pushes to bottom of fixed header */
+}
+
+.social-icons a {
+  color: var(--text-secondary);
+}
+
+.social-icons a:hover {
+  color: var(--text-primary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}

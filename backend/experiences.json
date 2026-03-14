@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "title": "Senior Frontend Engineer, Accessibility",
+    "company": "Klaviyo",
+    "date": "2024 - Present",
+    "description": "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Storybook"
+    ],
+    "link": "https://www.klaviyo.com"
+  },
+  {
+    "id": "2",
+    "title": "Lead Engineer",
+    "company": "Upstatement",
+    "date": "2018 - 2024",
+    "description": "Built, styled, and shipped high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, and Pratt Institute.",
+    "technologies": [
+      "JavaScript",
+      "React",
+      "WordPress",
+      "Gatsby"
+    ],
+    "link": "https://upstatement.com"
+  },
+  {
+    "id": "3",
+    "title": "UI Engineer Co-op",
+    "company": "Apple",
+    "date": "July - Dec 2017",
+    "description": "Developed and styled interactive web applications for Apple Music using Ember.js. Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs.",
+    "technologies": [
+      "Ember.js",
+      "SCSS",
+      "JavaScript"
+    ],
+    "link": "https://www.apple.com/apple-music/"
+  },
+  {
+    "id": "1773489964146",
+    "title": "Student Fullstack Web Development",
+    "company": "Dibimbing.id",
+    "date": "October 2025 - March 2026",
+    "description": "I learn about Fullstack from Zero to advance with practicing by profesional mentor at.",
+    "link": "https://dibimbing.id/",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Laravel."
+    ]
+  }
+]
