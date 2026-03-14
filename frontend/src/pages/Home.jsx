@@ -230,7 +230,7 @@ function Home() {
                             <div className="group-list">
                                 {projects.map((project, idx) => (
                                     <a href={project.link || project.liveDemoUrl || project.githubUrl || undefined} target={project.link || project.liveDemoUrl || project.githubUrl ? "_blank" : undefined} rel={project.link || project.liveDemoUrl || project.githubUrl ? "noreferrer" : undefined} key={project.id || project._id} className={`list-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ cursor: project.link || project.liveDemoUrl || project.githubUrl ? 'pointer' : 'default' }} onClick={(e) => { if (!(project.link || project.liveDemoUrl || project.githubUrl)) e.preventDefault() }}>
-                                        <div style={{ flexShrink: 0, width: '140px', paddingTop: '0.2rem' }}>
+                                        <div style={{ flexShrink: 0, width: '120px', paddingTop: '0.2rem' }}>
                                             <img src={project.imageUrl || 'https://via.placeholder.com/400x300'} alt={project.title} style={{ width: '100%', borderRadius: '4px', objectFit: 'cover', height: '80px', border: '2px solid rgba(255,255,255,0.05)' }} />
                                         </div>
                                         <div style={{ flex: 1 }}>

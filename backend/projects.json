@@ -9,26 +9,18 @@
       "React Vite",
       "Laravel Sanctum",
       "Tailwind CSS"
-    ],
-    "imageUrl": "https://i.pinimg.com/736x/d2/bd/49/d2bd4942fbb903b6929ee58f32b7f31d.jpg",
-    "liveDemoUrl": "https://github.com/codpangestu/FE-Frontwallet.git",
-    "technologies": [
-      "React Vite",
-      "Laravel Sanctum"
     ]
   },
   {
-    "id": "1773514208056",
-    "title": "Skybooking",
+    "id": "1773505086651",
+    "title": "SkyBooking",
     "description": "SkyBooking is a web-based airline reservation platform designed to simplify the process of searching and booking flights. The project combines the high performance of React with the design flexibility of Tailwind CSS, creating an intuitive and responsive interface across multiple devices.",
-    "imageUrl": "https://i.pinimg.com/736x/b5/9e/fb/b59efbe7b956505737ceec947f5c7683.jpg",
-    "liveDemoUrl": "https://github.com/codpangestu/FE-SkyBooking.git",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Laravel."
+    "image": "https://i.pinimg.com/736x/b5/9e/fb/b59efbe7b956505737ceec947f5c7683.jpg",
+    "link": "https://github.com/codpangestu/FE-SkyBooking.git",
+    "tags": [
+      "React Vite",
+      "Laravel Sanctum",
+      "Tailwind CSS"
     ]
   }
 ]
