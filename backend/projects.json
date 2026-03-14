@@ -35,5 +35,16 @@
       "React",
       "Next.js"
     ]
+  },
+  {
+    "id": "1773503689671",
+    "title": "WebbApp Mini Wallet",
+    "description": "is a web-based application designed to simulate a digital payment ecosystem in a simple, secure, and responsive way. The app's primary focus is on providing a seamless user experience for managing balances and conducting daily financial transactions without the complexities of conventional banking.",
+    "image": "https://drive.google.com/file/d/1IVfP3A6Mwll-Mg8f7BCKJUXamXWrcOUg/view?usp=sharing",
+    "link": "https://github.com/codpangestu/FE-Frontwallet.git",
+    "tags": [
+      "React Vite",
+      "Laravel Sanctum"
+    ]
   }
 ]
