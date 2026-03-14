@@ -191,7 +191,7 @@ function Home() {
                                 {experiences.map((exp, idx) => (
                                     <a href={exp.link || undefined} target={exp.link ? "_blank" : undefined} rel={exp.link ? "noreferrer" : undefined} key={exp.id || exp._id} className={`list-card animate-fade-in delay-${Math.min((idx + 1) * 100, 300)}`} style={{ cursor: exp.link ? 'pointer' : 'default' }} onClick={(e) => { if (!exp.link) e.preventDefault() }}>
                                         <div style={{ flexShrink: 0, width: '120px', paddingTop: '0.2rem' }}>
-                                            <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                            <span style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                                 {exp.duration || exp.date}
                                             </span>
                                         </div>
